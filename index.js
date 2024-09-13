@@ -36,9 +36,9 @@ app.use(morgan('tiny'));
 app.use(express.json())
 
 app.use('/track',RoutesTrack)//GPS and batery register users
-app.use('/user',RoutesUsers)
-app.use('/LogData',RoutesLogData)
-app.use('/Clients',RoutesClients)
+app.use('/user',RoutesUsers)// users information and credentials
+app.use('/logData',RoutesLogData)// when init journey and finish // entry client adn finish client service
+app.use('/Clients',RoutesClients)// consult client information
 
 
 app.listen(app.get('port'), function(){

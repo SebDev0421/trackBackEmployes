@@ -59,8 +59,8 @@ const contentSend = (userConfirmation,emailConfirmation) =>{
             <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Confirmación Exitosa">
             <h1>¡Confirmación Grupo Conexion Colombia!</h1>
             <p>Deseas confirmar al usuario `+userConfirmation+`.</p>
-            <a href="http://localhost:8000/user/confirmation?email=`+emailConfirmation+`&auth=1" class="btn">Confirmar</a>
-            <a href="http://localhost:8000/user/confirmation?email=`+emailConfirmation+`&auth=0" class="btn">Rechazar</a>
+            <a href="http://198.199.81.203:8000/user/confirmation?email=`+emailConfirmation+`&auth=1" class="btn">Confirmar</a>
+            <a href="http://198.199.81.203:8000/user/confirmation?email=`+emailConfirmation+`&auth=0" class="btn">Rechazar</a>
         </div>
     </body>
     </html>

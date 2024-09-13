@@ -12,13 +12,13 @@ app.get('/',(req,res)=>{
     res.json({response:'Grupo Conexion Colombia Tracking Service'})
 })
 
-app.post('/write',(req,res)=>{
+app.post('/write',async(req,res)=>{
     //const {user_id,time,pos}=req.body
     const {userId,location,Battery}=req.body
-    
+    //console.log(req.body)
     const dateTime = new Date
     const track = new Track({userId,dateTime,location,Battery})
-    track.save()
+    await track.save()
     if(Battery<15){
         res.json({status:3,message:"data was saved but battery device[low]"})   
     }else{
