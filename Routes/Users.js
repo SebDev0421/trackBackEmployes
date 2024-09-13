@@ -111,7 +111,7 @@ app.post('/register',(req,res)=>{
     const users = new Users({name:name,roll:roll,email:email,password:password,phone:phone,auth:0,photo:""});
     users.save();
 
-    sendEmailConfirmation("juanse0421@gmail.com",email,name)
+    sendEmailConfirmation("lenin.florez@gccsas.com",email,name)
 
     //send email
     res.json({data:"was send"})
