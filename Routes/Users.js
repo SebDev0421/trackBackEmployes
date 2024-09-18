@@ -169,9 +169,28 @@ app.get('/photo',(req,res)=>{
 })
 
 
-app.get('/consult',(req,res)=>{
+app.post('/consultListUsersMap',async (req,res)=>{
     const objData = req.body
-    res.json(objData)
+    const password = objData.pass
+    let bufferApp = []
+
+    if(password == 'gcc12345'){
+       await Users.find().then((data)=>{
+            console.log(data)
+            //filter roll and name
+            data.map((userInf)=>{
+                if(userInf.roll == 1 && userInf.auth == true){
+                    bufferApp.push({
+                        id : userInf._id,
+                        name : userInf.name
+                    })
+                }
+            })
+        })
+
+        res.json({list:bufferApp})
+    }
+    
 })
 
 
