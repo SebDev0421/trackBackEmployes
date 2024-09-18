@@ -33,17 +33,15 @@ app.post('/readUserRegister',(req,res)=>{
     //const {user_id,time,pos}=req.body
     const objData=req.body
     const userId = objData.userId
-    const dateTime = objData.dateTime
+    //const dateTime = objData.dateTime
 
-    const dateTimeRangeData = new Date(dateTime)
-    console.log(dateTimeRangeData)
+    //const dateTimeRangeData = new Date(dateTime)
+    //console.log(dateTimeRangeData)
     
     
     Track.find({userId:userId}).then((data)=>{
-        console.log(data)
+        res.json(data)
     })
-    
-    res.json(objData)
 })
 
 
